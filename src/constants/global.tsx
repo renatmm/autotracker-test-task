@@ -14,30 +14,31 @@ export const TABLE_TITLE= [
     'Название',
     'Уникальный Id',
     'Статус',
-    'Последнее обновление'
+    'Последнее обновление',
+    ''
 ];
     
-export const DEVICES: Device[] = [
-    {
-        id: '1',
-        name: 'Машина 1',
-        uniqueId: 'UNQ123',
-        status: true,
-        lastUpdate: '2022-01-15 10:30:00',
-    },
-    {
-        id: '2',
-        name: 'Машина 2',
-        uniqueId: 'UNQ456',
-        status: false,
-        lastUpdate: '2022-01-14 15:20:00',
-    },
-    {
-        id: '3',
-        name: 'Машина 3',
-        uniqueId: 'UNQ734',
-        status: false,
-        lastUpdate: '2022-01-13 17:00:00',
-    },
+// export const DEVICES: Device[] = [
+//     {
+//         id: 1,
+//         name: 'Машина 1',
+//         uniqueId: 'UNQ123',
+//         status: true,
+//         lastUpdate: '2022-01-15 10:30:00',
+//     },
+//     {
+//         id: 2,
+//         name: 'Машина 2',
+//         uniqueId: 'UNQ456',
+//         status: false,
+//         lastUpdate: '2022-01-14 15:20:00',
+//     },
+//     {
+//         id: 3,
+//         name: 'Машина 3',
+//         uniqueId: 'UNQ734',
+//         status: false,
+//         lastUpdate: '2022-01-13 17:00:00',
+//     },
 
-];
+// ];

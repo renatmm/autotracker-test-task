@@ -26,7 +26,7 @@ const SideBar: React.FC = () => {
         <Divider />
         <IconButton>
         <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <HouseOutlinedIcon sx={{ minHeight: 48, px: 2.5, textDecoration:'none' }}/>
+            <HouseOutlinedIcon sx={{ minHeight: 48, px: 2.5 }}/>
           </NavLink>
         </IconButton>
         <IconButton>
