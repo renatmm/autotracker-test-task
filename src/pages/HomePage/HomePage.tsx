@@ -1,8 +1,15 @@
+import {FC} from 'react';
+import { CustomContainer } from './styles';
 import SideBar from "../../components/SideBar/SideBar"
+import AppBar from '../../components/AppBar/AppBar';
 
-const HomePage = () => {
+
+const HomePage: FC = () => {
   return (
-    <SideBar />
+    <CustomContainer>
+      <SideBar/>
+      <AppBar/>
+    </CustomContainer> 
   )
 }
 
