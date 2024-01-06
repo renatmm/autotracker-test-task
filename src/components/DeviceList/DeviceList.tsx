@@ -1,19 +1,12 @@
 import { useState, useEffect } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
 import SearchBar from '../SearchBar/SearchBar';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { Device } from '../../interfaces';
+import { CustomButton, CustomWrapper } from './styles';
 import { TABLE_TITLE } from '../../constants/global';
 import {getData, postObj, deleteObj} from '../../api/api'
 import DeviceListItem from '../DeviceListItem/DeviceListItem';
-
+import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper} from '@mui/material';
 
 const DeviceList: React.FC = () => {
   const [devices, setDevices] = useState<Device[]>([]);
@@ -65,7 +58,7 @@ const DeviceList: React.FC = () => {
 };
 
   return (
-    <>
+    <CustomWrapper>
       <SearchBar onHandleSearch={handleSearch} />
       <TableContainer component={Paper}>
         <Table aria-label="Таблица устройств">
@@ -86,19 +79,13 @@ const DeviceList: React.FC = () => {
             ))}
           </TableBody>
         </Table>
-        <Button
-          onClick={handleAddObj}
-          variant='contained'
-          sx={{ p: 1, m: 1 }}
-        >
-            Добавить
-        </Button>
+        <CustomButton onClick={handleAddObj}>Добавить</CustomButton>
         <ErrorModal
           isModalOpen={isModalOpen}
           handleModalClose={handleModalClose}
         />
       </TableContainer>
-    </>
+    </CustomWrapper>
   );
 }
 

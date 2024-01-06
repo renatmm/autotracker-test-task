@@ -1,5 +1,7 @@
 import { Device } from "../interfaces";
 
+export const APP_BAR_WIDTH = '60px';
+
 export const NAV_ITEMS = [ 
     'Учетные записи',
     'Пользователи',
@@ -17,6 +19,7 @@ export const TABLE_TITLE= [
     'Последнее обновление',
     ''
 ];
+
     
 // export const DEVICES: Device[] = [
 //     {

@@ -1,4 +1,3 @@
-import CustomAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -7,14 +6,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { NAV_ITEMS } from '../../constants/global';
+import { CustomAppBar } from './styles';
 
 interface AppBarProps {
 }
 
 const AppBar: React.FC<AppBarProps> = () => {
   return (
-    <Box>
-      <CustomAppBar position="static">
+      <CustomAppBar>
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {NAV_ITEMS.map((item) => (
@@ -42,7 +41,6 @@ const AppBar: React.FC<AppBarProps> = () => {
           </Box>
         </Toolbar>
       </CustomAppBar>
-    </Box>
   );
 }
 
