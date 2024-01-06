@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
-import ErrorModal from '../ErrorModal/ErrorModal';
+import DialogModal from '../DialogModal/DialogModal';
 import { Device } from '../../interfaces';
 import { CustomButton, CustomWrapper } from './styles';
-import { TABLE_TITLE } from '../../constants/global';
+import { TABLE_TITLE, ERROR_MESSAGE } from '../../constants/global';
 import {getData, postObj, deleteObj} from '../../api/api'
 import DeviceListItem from '../DeviceListItem/DeviceListItem';
 import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper} from '@mui/material';
@@ -61,7 +61,7 @@ const DeviceList: React.FC = () => {
     <CustomWrapper>
       <SearchBar onHandleSearch={handleSearch} />
       <TableContainer component={Paper}>
-        <Table aria-label="Таблица устройств">
+        <Table aria-label="device-table">
           <TableHead>
             <TableRow>
               {TABLE_TITLE.map((title, index) => (
@@ -80,7 +80,8 @@ const DeviceList: React.FC = () => {
           </TableBody>
         </Table>
         <CustomButton onClick={handleAddObj}>Добавить</CustomButton>
-        <ErrorModal
+        <DialogModal
+          content={ERROR_MESSAGE}
           isModalOpen={isModalOpen}
           handleModalClose={handleModalClose}
         />

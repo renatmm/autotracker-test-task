@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Device } from '../interfaces';
 const API = 'https://jsonplaceholder.typicode.com/users/'
 const BEARER_TOKEN = 'RzBFAiEA92qN8JvTQ6BIgvjSTke8iQltj3SJf9vhkqyf5zcuUL4CIF1GRd1vLuSJrzzDqv80AF_BAiF91tCWPMvlhuRNrI0DeyJ1IjozLCJlIjoiMjAyMy0xMi0zMVQyMTowMDowMC4wMDArMDA6MDAifQ';
 
@@ -21,7 +20,7 @@ export const postObj = () => {
 }
 
 export const deleteObj = (id: string) => {
-  const response = axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`, config);
+  const response = axios.delete(`1https://jsonplaceholder.typicode.com/posts/${id}`, config);
   return response
 }
 

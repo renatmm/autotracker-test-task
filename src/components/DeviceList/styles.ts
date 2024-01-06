@@ -7,12 +7,13 @@ export const CustomWrapper = styled(Box)`
   margin-top: 100px
 `
 
-export const CustomButton = styled(ButtonBase)({
-  backgroundColor: '#1976d2',
-  borderRadius: 3,
-  color: 'white',
-  fontSize: '16px',
-  maxHeight: 48,
-  padding: '20px',
-  margin: '10px',
-});
+export const CustomButton = styled(ButtonBase)`
+  background-color: #1976d2;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  max-height: 48px;
+  padding: 20px;
+  margin: 10px;
+`
+

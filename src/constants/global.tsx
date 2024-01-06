@@ -1,6 +1,11 @@
-import { Device } from "../interfaces";
-
 export const APP_BAR_WIDTH = '60px';
+
+export const ERROR_MESSAGE = {
+    errorTitle: 'Ошибка авторизации',
+    errorText: 'Недостаточно прав на данную операцию'
+};
+
+export const APP_BAR_EMAIL = 'renat@example.com';
 
 export const NAV_ITEMS = [ 
     'Учетные записи',
@@ -19,29 +24,3 @@ export const TABLE_TITLE= [
     'Последнее обновление',
     ''
 ];
-
-    
-// export const DEVICES: Device[] = [
-//     {
-//         id: 1,
-//         name: 'Машина 1',
-//         uniqueId: 'UNQ123',
-//         status: true,
-//         lastUpdate: '2022-01-15 10:30:00',
-//     },
-//     {
-//         id: 2,
-//         name: 'Машина 2',
-//         uniqueId: 'UNQ456',
-//         status: false,
-//         lastUpdate: '2022-01-14 15:20:00',
-//     },
-//     {
-//         id: 3,
-//         name: 'Машина 3',
-//         uniqueId: 'UNQ734',
-//         status: false,
-//         lastUpdate: '2022-01-13 17:00:00',
-//     },
-
-// ];

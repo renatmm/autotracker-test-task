@@ -1,11 +1,3 @@
-// export interface Device {
-//     id: number;
-//     name: string;
-//     uniqueId: string;
-//     status: boolean;
-//     lastUpdate: string;
-// }
-
 export interface Device {
     id: number;
     name: string;
@@ -15,4 +7,9 @@ export interface Device {
         street: string;
         city: string;
     }
+}
+
+export interface IErorMessage{
+    errorTitle: string;
+    errorText: string;
 }

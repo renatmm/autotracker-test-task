@@ -3,38 +3,34 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { NAV_ITEMS } from '../../constants/global';
-import { CustomAppBar } from './styles';
+import { APP_BAR_EMAIL, NAV_ITEMS } from '../../constants/global';
+import { CustomAppBar, CustomBox, CustomButton } from './styles';
 
-interface AppBarProps {
-}
-
-const AppBar: React.FC<AppBarProps> = () => {
+const AppBar: React.FC = () => {
   return (
       <CustomAppBar>
         <Toolbar>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+        <CustomBox>
             {NAV_ITEMS.map((item) => (
-              <Button
-                key={item}
-                sx={{ color: 'white', display: 'block' }}
-              >
+              <CustomButton key={item}>
                 {item}
-              </Button>
+              </CustomButton>
             ))}
-          </Box>
+          </CustomBox>
           <Box>
             <IconButton color="inherit">
               <NotificationsIcon />
             </IconButton>
+
             <IconButton color="inherit" >
-              <AccountCircle sx={{ fontSize: 30 }}/>
+              <AccountCircle/>
             </IconButton>
-            <IconButton size="small" color="inherit" sx={{ fontSize: 16 }}>
-              renat@example.com
+
+            <IconButton size="small" color="inherit">
+              {APP_BAR_EMAIL}
             </IconButton>
+            
             <IconButton size="small" color="inherit">
               <KeyboardArrowDownIcon/>
             </IconButton>
