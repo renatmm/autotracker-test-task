@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import Box from '@mui/material/Box';
 
 interface SearchBarProps {
@@ -18,11 +18,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onHandleSearch }) => {
 
   return (
     <Box display="flex" alignItems="center">
-      <InputBase
+      <OutlinedInput 
         value={searchValue}
         onChange={(e) => handleSearchChange(e.target.value)}
         placeholder="Поиск по ID"
-        startAdornment={<SearchIcon color="action" />}
+        endAdornment={<SearchIcon color="action" />}
       />
     </Box>
   );

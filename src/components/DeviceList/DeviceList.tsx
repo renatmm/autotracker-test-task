@@ -2,11 +2,15 @@ import { useState, useEffect } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import DialogModal from '../DialogModal/DialogModal';
 import { Device } from '../../interfaces';
-import { CustomButton, CustomWrapper } from './styles';
+import { CustomButton, TableWrapper, SearchWrapper } from './styles';
 import { TABLE_TITLE, ERROR_MESSAGE } from '../../constants/global';
 import {getData, postObj, deleteObj} from '../../api/api'
-import DeviceListItem from '../DeviceListItem/DeviceListItem';
-import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper} from '@mui/material';
+import DeviceListItem from '../DeviceItem/DeviceItem';
+import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper, Box, IconButton} from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
+import BtnTabs from '../BtnTabs/BtnTabs';
 
 const DeviceList: React.FC = () => {
   const [devices, setDevices] = useState<Device[]>([]);
@@ -58,8 +62,24 @@ const DeviceList: React.FC = () => {
 };
 
   return (
-    <CustomWrapper>
-      <SearchBar onHandleSearch={handleSearch} />
+    <TableWrapper>
+      <SearchWrapper>
+        <SearchBar onHandleSearch={handleSearch} />
+        <BtnTabs/>
+        <Box>
+          <IconButton>
+            <PhoneIcon />
+          </IconButton>
+
+          <IconButton>
+            <FavoriteIcon />
+          </IconButton>
+
+          <IconButton>
+            <PersonPinIcon />
+          </IconButton>
+        </Box>
+      </SearchWrapper>
       <TableContainer component={Paper}>
         <Table aria-label="device-table">
           <TableHead>
@@ -86,7 +106,7 @@ const DeviceList: React.FC = () => {
           handleModalClose={handleModalClose}
         />
       </TableContainer>
-    </CustomWrapper>
+    </TableWrapper>
   );
 }
 

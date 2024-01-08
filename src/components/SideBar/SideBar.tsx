@@ -5,7 +5,7 @@ import {CustomDrawer, CustomNavLink, CustomMenuIcon} from './styles';
 
 const SideBar: React.FC = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box>
       <CustomDrawer variant="permanent">
         <IconButton>
           <CustomMenuIcon/>
@@ -14,13 +14,13 @@ const SideBar: React.FC = () => {
 
         <IconButton>
           <CustomNavLink to="/">
-            <ListAltIcon/>
+            <HouseOutlinedIcon/>
           </CustomNavLink>
         </IconButton>
         
         <IconButton>
           <CustomNavLink to="/device-list">
-            <HouseOutlinedIcon/>
+            <ListAltIcon/>
           </CustomNavLink>
         </IconButton>
       </CustomDrawer>
