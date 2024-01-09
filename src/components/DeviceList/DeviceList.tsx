@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import DialogModal from '../DialogModal/DialogModal';
 import { Device } from '../../interfaces';
@@ -7,15 +7,18 @@ import { TABLE_TITLE, ERROR_MESSAGE } from '../../constants/global';
 import {getData, postObj, deleteObj} from '../../api/api'
 import DeviceListItem from '../DeviceItem/DeviceItem';
 import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper, Box, IconButton} from '@mui/material';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
 import BtnTabs from '../BtnTabs/BtnTabs';
+import Select from '../Select/Select';
+import Spinner from '../Spinner/Spinner';
+import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
+import WidthNormalOutlinedIcon from '@mui/icons-material/WidthNormalOutlined';
+import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
 
-const DeviceList: React.FC = () => {
+const DeviceList: FC = () => {
   const [devices, setDevices] = useState<Device[]>([]);
   const [searchedDevices, setSearchedDevices] = useState<Device[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     handleFetchData()
@@ -25,6 +28,7 @@ const DeviceList: React.FC = () => {
     const data = (await getData()).data;
     setDevices(data);
     setSearchedDevices(data);
+    setIsLoading(false);
   }
 
   const handleAddObj = async () => {
@@ -63,24 +67,28 @@ const DeviceList: React.FC = () => {
 
   return (
     <TableWrapper>
-      <SearchWrapper>
-        <SearchBar onHandleSearch={handleSearch} />
-        <BtnTabs/>
-        <Box>
-          <IconButton>
-            <PhoneIcon />
-          </IconButton>
+        <Box display={'flex'}   alignItems={'center'}>
+          <SearchWrapper>
+            <SearchBar onHandleSearch={handleSearch} />
+            <BtnTabs/>
+            <Box>
+              <IconButton>
+                <WidthNormalOutlinedIcon />
+              </IconButton>
 
-          <IconButton>
-            <FavoriteIcon />
-          </IconButton>
+              <IconButton>
+                <FilterListOutlinedIcon />
+              </IconButton>
 
-          <IconButton>
-            <PersonPinIcon />
-          </IconButton>
+              <IconButton >
+                <DownloadOutlinedIcon />
+              </IconButton>
+            </Box>
+          </SearchWrapper>
+          <Select />
         </Box>
-      </SearchWrapper>
       <TableContainer component={Paper}>
+        {isLoading ? <Spinner/> : 
         <Table aria-label="device-table">
           <TableHead>
             <TableRow>
@@ -98,7 +106,7 @@ const DeviceList: React.FC = () => {
               />
             ))}
           </TableBody>
-        </Table>
+        </Table>}
         <CustomButton onClick={handleAddObj}>Добавить</CustomButton>
         <DialogModal
           content={ERROR_MESSAGE}

@@ -10,7 +10,7 @@ export const TableWrapper = styled(Box)`
 export const SearchWrapper = styled(Box)`
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
   gap: 20px
 `
 
