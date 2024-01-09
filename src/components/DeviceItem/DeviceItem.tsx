@@ -1,9 +1,7 @@
 import { FC } from 'react';
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import IconButton from "@mui/material/IconButton";
+import { Device } from "../../interfaces/interfaces";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Device } from "../../interfaces";
+import {TableRow, TableCell, IconButton} from "@mui/material";
 
 interface DeviceListItemProps {
     device: Device

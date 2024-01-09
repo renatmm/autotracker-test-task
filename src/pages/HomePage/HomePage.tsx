@@ -1,14 +1,14 @@
 import {FC} from 'react';
-import { CustomContainer } from './styles';
+import { HomePageContainer } from './styles';
 import SideBar from "../../components/SideBar/SideBar"
 import AppBar from '../../components/AppBar/AppBar';
 
 const HomePage: FC = () => {
   return (
-    <CustomContainer>
+    <HomePageContainer>
       <SideBar/>
       <AppBar/>
-    </CustomContainer> 
+    </HomePageContainer> 
   )
 }
 

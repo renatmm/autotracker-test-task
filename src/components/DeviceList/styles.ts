@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 import ButtonBase from '@mui/material/ButtonBase';
-
 import { Box } from '@mui/material';
-
-export const TableWrapper = styled(Box)`
-  margin-top: 60px;
-`
 
 export const SearchWrapper = styled(Box)`
   display: flex;

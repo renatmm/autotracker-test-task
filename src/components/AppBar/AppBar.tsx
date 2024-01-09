@@ -1,20 +1,18 @@
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+import { APP_BAR_EMAIL, NAV_ITEMS } from '../../constants/global';
+import { CustomAppBar, CustomBox, CustomButton } from './styles';
+import {Toolbar, IconButton, Box} from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { APP_BAR_EMAIL, NAV_ITEMS } from '../../constants/global';
-import { CustomAppBar, CustomBox, CustomButton } from './styles';
 
 const AppBar: React.FC = () => {
   return (
       <CustomAppBar>
         <Toolbar>
         <CustomBox>
-            {NAV_ITEMS.map((item) => (
-              <CustomButton key={item}>
-                {item}
+            {NAV_ITEMS.map(item => (
+              <CustomButton key={item.id}>
+                {item.name}
               </CustomButton>
             ))}
           </CustomBox>

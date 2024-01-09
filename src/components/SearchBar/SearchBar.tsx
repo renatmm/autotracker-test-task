@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onHandleSearch }) => {
   };
 
   return (
-    <Box display="flex" alignItems="center">
+    <Box>
       <OutlinedInput 
         value={searchValue}
         onChange={(e) => handleSearchChange(e.target.value)}

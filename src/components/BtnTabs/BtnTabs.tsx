@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BTN_TABS } from '../../constants/global';
 import {Tabs, Tab} from '@mui/material';
 
 const BtnTabs = () => {
@@ -10,8 +11,9 @@ const BtnTabs = () => {
 
   return (
     <Tabs value={value} onChange={handleChange}>
-      <Tab label='Объекты'/>
-      <Tab label='Группы'/>
+      {BTN_TABS.map(tab => (
+        <Tab key={tab.id} label={tab.name}/>
+      ))}      
     </Tabs>
   );
 }

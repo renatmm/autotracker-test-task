@@ -1,12 +1,9 @@
 import { FC } from 'react';
-import { SpinnerWrapper } from './styles';
-import { CircularProgress } from '@mui/material';
+import { CustomSpinner } from './styles';
 
 const Spinner: FC = () => {
   return (
-    <SpinnerWrapper>
-      <CircularProgress/>
-    </SpinnerWrapper>
+    <CustomSpinner/>
   );
 }
 

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import {Modal} from '@mui/material';
 import { CustomBox, CustomTypography } from './styles';
-import { IErorMessage } from '../../interfaces';
+import { IErorMessage } from '../../interfaces/interfaces';
 
 interface ErrorModalProps {
   isModalOpen: boolean;
